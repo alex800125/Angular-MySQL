@@ -9,19 +9,19 @@ import { Observable } from 'rxjs';
 
 export class ApiService {
   
-  PHP_API_SERVER = "http://localhost:8080";
+  PHP_API_SERVER = "http://127.0.0.1:8080";
 
   readNames(): Observable<Names[]>{
-    return this.httpClient.get<Names[]>(`${this.PHP_API_SERVER}/api/read.php`);
+    return this.httpClient.get<Names[]>(`${this.PHP_API_SERVER}/read.php`);
   }
   createNames(names: Names): Observable<Names>{
-    return this.httpClient.post<Names>(`${this.PHP_API_SERVER}/api/create.php`, names);
+    return this.httpClient.post<Names>(`${this.PHP_API_SERVER}/create.php`, names);
   }
   updateNames(names: Names){
-    return this.httpClient.put<Names>(`${this.PHP_API_SERVER}/api/update.php`, names);   
+    return this.httpClient.put<Names>(`${this.PHP_API_SERVER}/update.php`, names);   
   }
   deleteNames(codigo: number){
-    return this.httpClient.delete<Names>(`${this.PHP_API_SERVER}/api/delete.php/?codigo=${codigo}`);
+    return this.httpClient.delete<Names>(`${this.PHP_API_SERVER}/delete.php/?codigo=${codigo}`);
   }
 
   constructor(private httpClient: HttpClient) {}

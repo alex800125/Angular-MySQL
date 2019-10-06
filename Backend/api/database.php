@@ -5,7 +5,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
-define('DB_PASS', '123456');
+define('DB_PASS', 'senha_nova');
 define('DB_NAME', 'dbnomes');
 
 function connect()

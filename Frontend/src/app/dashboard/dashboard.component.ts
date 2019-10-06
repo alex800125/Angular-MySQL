@@ -9,19 +9,17 @@ import { Names } from '../names';
 })
 export class DashboardComponent implements OnInit {
 
-  Names:  Names[];
+  names:  Names[];
   selectedNames:  Names  = { codigo : null , nome: null, email: null};
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.readNames().subscribe((Names: Names[])=>{
-      this.Names = Names;
-      console.log(this.Names);
+    this.apiService.readNames().subscribe((names: Names[])=>{
+      this.names = names;
+      console.log(this.names);
     })
-
   }
-
 }
 
  

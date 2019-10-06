@@ -1,11 +1,11 @@
 <?php
 /**
- * Returns the list of policies.
+ * Returns the list of names.
  */
 require 'database.php';
 
 $nomes = [];
-$sql = "SELECT codigo, nome, email FROM Nomes";
+$sql = "SELECT codigo, nome, email FROM nomes";
 
 if($result = mysqli_query($con,$sql))
 {
