@@ -15,12 +15,12 @@ if(isset($postdata) && !empty($postdata))
   }
 
   // Sanitize.
-  $codigo    = mysqli_real_escape_string($con, (int)$request->codigo);
+  $codigo = mysqli_real_escape_string($con, (int)$request->codigo);
   $nome = mysqli_real_escape_string($con, $request->nome);
   $email = mysqli_real_escape_string($con, $request->email);
 
   // Update.
-  $sql = "UPDATE `policies` SET `nome`='$nome',`email`='$email' WHERE `codigo` = '{$codigo}' LIMIT 1";
+  $sql = "UPDATE `nomes` SET `nome`='$nome',`email`='$email' WHERE `codigo` = '{$codigo}' LIMIT 1";
 
   if(mysqli_query($con, $sql))
   {

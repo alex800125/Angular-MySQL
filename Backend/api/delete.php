@@ -3,7 +3,7 @@
 require 'database.php';
 
 // Extract, validate and sanitize the codigo.
-$id = ($_GET['codigo'] !== null && (int)$_GET['codigo'] > 0)? mysqli_real_escape_string($con, (int)$_GET['codigo']) : false;
+$codigo = ($_GET['codigo'] !== null && (int)$_GET['codigo'] > 0)? mysqli_real_escape_string($con, (int)$_GET['codigo']) : false;
 
 if(!$codigo)
 {
@@ -11,7 +11,7 @@ if(!$codigo)
 }
 
 // Delete.
-$sql = "DELETE FROM `policies` WHERE `codigo` ='{$codigo}' LIMIT 1";
+$sql = "DELETE FROM `nomes` WHERE `codigo` ='{$codigo}' LIMIT 1";
 
 if(mysqli_query($con, $sql))
 {

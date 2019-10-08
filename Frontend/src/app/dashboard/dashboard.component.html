@@ -1,1 +1,38 @@
-<p>dashboard works!</p>
+<h1>Insurance Names Management</h1>
+<div>
+ 
+  <table border='1' width='100%' style='border-collapse: collapse;'>
+    <tr>
+      <th>ID</th>
+      <th>Names Number</th>
+      <th>Names Amount</th>
+      <th>Operations</th>
+ 
+    </tr>
+ 
+    <tr *ngFor="let name of names">
+      <td>{{ name.codigo }}</td>
+      <td>{{ name.nome }}</td>
+      <td>{{ name.email }}</td>
+      <td>
+        <button (click)="deleteNames(name.codigo)">Delete</button>
+        <button (click)="selectNames(name)">Update</button>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+  <form #f = "ngForm">
+    <label>Nome</label>
+    <input type="text" name="nome" [(ngModel)] = "selectedNames.nome">
+    <br>
+    <label>Email</label>
+    <input type="text" name="email" [(ngModel)] = "selectedNames.email">
+    <br>
+    <input type="button" (click)="createOrUpdateNames(f)" value="Create or Update Name">
+  </form>
+ 
+
+
+ 
+
