@@ -1,4 +1,4 @@
-CREATE TABLE Nomes(
+CREATE TABLE nomes(
 codigo int(4) AUTO_INCREMENT,
 nome varchar(20) NOT NULL,
 email varchar(50) NOT NULL,
