@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
 
   createOrUpdateNames(form){
     if(this.selectedNames && this.selectedNames.codigo){
-      form.value.id = this.selectedNames.codigo;
+      form.value.codigo = this.selectedNames.codigo;
       this.apiService.updateNames(form.value).subscribe((names: Names)=>{
         console.log("Name updated" , names);
       });
